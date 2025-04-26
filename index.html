@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>哈萨克斯坦历史与文化 | 简讯新闻</title>
+    <style>
+        /* 基础样式 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            color: #333;
+            background-color: #f8f9fa;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* 白色导航栏 - 文化主题 */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #fbbc05; /* 文化主题色 */
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: #fbbc05; /* 文化主题色 */
+        }
+        
+        /* 简洁导航菜单 */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 2rem;
+        }
+        
+        nav a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #fbbc05;
+        }
+        
+        nav a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fbbc05;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover:after {
+            width: 100%;
+        }
+        
+        /* 文章内容区 */
+        .article-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .article-header {
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .article-title {
+            font-size: 2rem;
+            font-weight: normal;
+            color: #222;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        
+        .article-subtitle {
+            color: #666;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+        
+        .article-meta {
+            color: #888;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        /* 文章正文样式 */
+        .article-content {
+            line-height: 1.8;
+            color: #444;
+        }
+        
+        .article-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+        
+        .article-content h2 {
+            font-size: 1.6rem;
+            color: #222;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #fbbc05;
+        }
+        
+        .article-content h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin: 2rem 0 1rem;
+            padding-left: 0.5rem;
+            border-left: 3px solid #34a853;
+        }
+        
+        .article-content h4 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .article-content blockquote {
+            border-left: 4px solid #fbbc05;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            color: #555;
+            font-style: italic;
+            background-color: #f8f9fa;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .article-content a {
+            color: #4285f4;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .article-content a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 时间轴样式 */
+        .timeline {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 1.5rem;
+            border-left: 3px solid #fbbc05;
+        }
+        
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+        
+        .timeline-year {
+            position: absolute;
+            left: -2.2rem;
+            top: 0;
+            background-color: #fbbc05;
+            color: white;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .timeline-content {
+            padding-left: 1.5rem;
+        }
+        
+        .timeline-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* 文化特征卡片 */
+        .culture-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #34a853;
+        }
+        
+        .culture-card h4 {
+            color: #34a853;
+            margin-top: 0;
+        }
+        
+        /* 图片展示样式 */
+        .culture-image {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin: 1rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        /* 页脚 */
+        footer {
+            background: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            border-top: 1px solid #eee;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: #fbbc05;
+        }
+        
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            body {
+                padding: 0 15px;
+            }
+            
+            .header-container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            nav li {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            
+            .article-container {
+                padding: 1.5rem;
+            }
+            
+            .article-title {
+                font-size: 1.6rem;
+            }
+            
+            .timeline {
+                padding-left: 1rem;
+            }
+            
+            .timeline-year {
+                left: -1.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 白色导航栏 -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">中哈<span>文化云脉</span></a>
+            <nav>
+                <ul>
+                    <li><a href="https://zhwhym.github.io/1//">首页</a></li>
+                    <li><a href="https://yuteng0412.github.io/shouye2/">走近哈萨克斯坦</a></li>
+                    <li><a href="https://yuteng0412.github.io/shouye3/">相关资料</a></li>
+                    <li><a href="https://yuteng0412.github.io/shouye4/">公众号</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 文章内容 -->
+    <main class="article-container">
+        <div class="article-header">
+            <h1 class="article-title">哈萨克斯坦历史与文化综述</h1>
+            <p class="article-subtitle">从草原文明到现代国家的史诗旅程</p>
+            <div class="article-meta">
+                <span>专题报告</span>
+                <span>更新日期：2023年9月</span>
+            </div>
+        </div>
+        
+        <div class="article-content">
+            <p>哈萨克斯坦的历史是一部游牧文明与农耕文明碰撞、东西方文化交融的史诗。其文化基因中既有马背民族的豪迈，也有丝绸之路的包容，更经历了沙俄殖民与苏联工业化的深刻塑造。</p>
+            
+            <h2>一、古代游牧文明时期（公元前7世纪-公元15世纪）</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">前7c</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">塞种人时期</h4>
+                        <p>最早的草原游牧民族之一，以精湛的金器工艺闻名。出土的"金武士"（伊塞克金人，公元前5世纪）铠甲缀满4000片金饰，印证了草原贵族的尚武传统。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">前3c</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">匈奴与乌孙</h4>
+                        <p>匈奴崛起并西迁，迫使乌孙部落迁居伊犁河谷。张骞通西域后，乌孙与汉朝联姻（细君公主、解忧公主），开启草原与中原的早期互动。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">6c</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">突厥汗国</h4>
+                        <p>6世纪突厥人建立横跨中亚的帝国，推广突厥文字（鄂尔浑碑文），推动草原部落联盟向国家形态过渡。</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">13c</div>
+                    <div class="timeline-content">
+                        <h4 class="timeline-title">蒙古帝国</h4>
+                        <p>1219年，成吉思汗西征花剌子模，哈萨克草原纳入察合台汗国与金帐汗国版图。蒙古统治下，草原部落重新整合。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="culture-card">
+                <h4>文化特征</h4>
+                <p>原始萨满教盛行，崇拜腾格里（天神）、祖先与自然神灵。岩画（如塔姆加利岩刻）和鹿石石碑记录了游牧生活与信仰，反映了早期草原艺术的抽象风格。</p>
+            </div>
+            
+            <h2>二、哈萨克汗国与伊斯兰化时期（1465年-18世纪中叶）</h2>
+            
+            <p>1465年，克烈汗与贾尼别克汗率部脱离乌兹别克汗国，建立首个哈萨克人政权。16世纪初，哈斯木汗统一三大玉兹，颁布《哈斯木法典》，确立以习惯法为核心的治理体系。</p>
+            
+            <blockquote>
+                "苏菲派传教士将伊斯兰教与萨满习俗融合，霍贾·艾哈迈德·亚萨维陵墓成为精神圣地。游牧生活仍保留泛灵信仰，如对自然现象的崇拜。"
+            </blockquote>
+            
+            <h2>三、沙俄殖民与苏联改造时期（19世纪-1991年）</h2>
+            
+            <h3>1. 沙俄统治下的剧变（1867年-1917年）</h3>
+            <p>1867年沙俄设草原总督区，推行俄式行政与土地改革。哈萨克知识分子阿拜·库南巴耶夫以诗歌呼吁民族觉醒，其作品《箴言录》成为哈萨克文学经典。</p>
+            
+            <h3>2. 苏联时期的工业化与创伤（1920年-1991年）</h3>
+            <p>1928年苏联推行农业集体化，强制定居游牧民导致1932-1933年大饥荒（哈萨克斯坦饿死150万人，占人口1/3）。作家穆赫塔尔·阿乌埃佐夫创作史诗《阿拜之路》，秘密保存民族记忆。</p>
+            
+            <h2>四、独立后的国家重建与文化复兴（1991年至今）</h2>
+            
+            <div class="culture-card">
+                <h4>迁都战略</h4>
+                <p>1997年首都从阿拉木图迁至阿斯塔纳（今努尔苏丹），以新都建设凝聚国家认同。阿斯塔纳的现代化建筑群（如"可汗之帐"购物中心）成为"欧亚主义"符号。</p>
+            </div>
+            
+            <h2>五、哈萨克文化核心特质解析</h2>
+            
+            <h3>1. 游牧精神遗产</h3>
+            <p>毡房（蒙古包）适应迁徙生活，马鞍、地毯纹样蕴含氏族图腾。冬不拉弹唱"阿依特斯"即兴对诗，史诗《阿尔帕米斯》歌颂英雄主义。</p>
+            
+            <h3>2. 伊斯兰-突厥文化层</h3>
+            <p>霍贾·艾哈迈德·亚萨维陵墓的巨型穹顶与几何釉砖，突厥斯坦古城融合波斯与帖木儿风格。15世纪诗人阿桑·卡依格的哲理诗成为民族精神载体。</p>
+            
+            <h3>3. 苏联遗产与多元共存</h3>
+            <p>阿拉木图的苏联式广场与阿斯塔纳的未来主义建筑形成鲜明对比。俄式罗宋汤与哈萨克别什巴尔马克共列国宴，体现了多民族共存特征。</p>
+            
+            <blockquote>
+                "哈萨克斯坦的历史是一部不断应对征服、迁徙与文化融合的编年史。从金帐汗国的碎片中崛起的现代国家，正试图在突厥遗产、伊斯兰传统、苏联遗产与全球化浪潮之间，构建'哈萨克特性'的新叙事。"
+            </blockquote>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">联系方式</a>    
+            <a href="#">加入我们</a>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 中哈网络文化研习社</p>
+        </div>
+    </footer>
+</body>
+</html>
